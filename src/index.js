@@ -1,17 +1,63 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import "./style.css";
+import dog1 from "./assets/images/dog1.jpg"
+import dog2 from "./assets/images/dog3.jpg"
+import dog3 from "./assets/images/dog2.jpg"
+import dog4 from "./assets/images/dog5.avif"
+import dog5 from "./assets/images/dog4.avif"
 const root = ReactDOM.createRoot(document.getElementById('root'));
+function Image(props){
+  return(
+   
+        <div class="cards">
+            <img src={props.pic}></img>
+            <p>{props.name}</p>
+        </div>
+      
+  )
+}
+var image=[{
+  pic:dog1,
+  name:"Penny"
+},
+{
+  pic:dog2,
+  name:"Remington"
+},
+{
+  pic:dog3,
+  name:"Riley"
+},
+{
+  pic:dog4,
+  name:"Scarlett"
+},
+{
+  pic:dog5,
+  name:"The innocent Look"
+},
+{
+  pic:dog1,
+  name:"The innocent Look"
+},
+{
+  pic:dog1,
+  name:"The innocent Look"
+},
+{
+  pic:dog1,
+  name:"The innocent Look"
+}
+]
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  <div class="container">
+    {
+      image.map(function(item){
+       return<Image pic={item.pic} name={item.name}></Image>
+      })
+    }
+  </div>
+  )
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
